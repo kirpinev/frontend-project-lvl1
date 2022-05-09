@@ -15,4 +15,4 @@ jobs:
           cache: npm
 
       - name: Run linting
-      - run: make lint
+        run: make lint
