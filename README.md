@@ -5,3 +5,4 @@
 
 ### Work example:
 [![Work example](https://asciinema.org/a/mdjlgRGIutXYIL2bZ40mgGIYU.png)](https://asciinema.org/a/mdjlgRGIutXYIL2bZ40mgGIYU)
+<em>click on the picture to play the video</em>
