@@ -14,3 +14,7 @@
 ### Brain gcd game example:
 [![Work example](https://asciinema.org/a/N4p1Ttgf7yqOmqPv5DDihrqPu.png)](https://asciinema.org/a/N4p1Ttgf7yqOmqPv5DDihrqPu)
 <em>click on the picture to play the video</em>
+
+### Brain progression game example:
+[![Work example](https://asciinema.org/a/yBp4nxDf2nvUsohs4uEpvjDR8.png)](https://asciinema.org/a/yBp4nxDf2nvUsohs4uEpvjDR8)
+<em>click on the picture to play the video</em>

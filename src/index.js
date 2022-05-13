@@ -90,6 +90,52 @@ export const getRandomTwoNumbersAnswer = (randomTwoNumbers) => {
   return null;
 };
 
+export const getProgression = () => {
+  const randomStartNumber = getRandomNumber();
+  const randomIncrementNumber = getRandomNumber(1, 10);
+  const randomEmptyPosition = getRandomNumber(0, 9);
+  const hiddenNumberString = "..";
+  const progressionArray = [randomStartNumber];
+  const maxProgressionLength = 10;
+
+  for (let i = 1; i < maxProgressionLength; i += 1) {
+    progressionArray.push(
+      progressionArray[progressionArray.length - 1] + randomIncrementNumber
+    );
+  }
+
+  return [
+    ...progressionArray.slice(0, randomEmptyPosition),
+    hiddenNumberString,
+    ...progressionArray.slice(randomEmptyPosition + 1),
+  ].join(" ");
+};
+
+export const getProgressionAnswer = (progression) => {
+  const progressionArray = progression.split(" ");
+  const hiddenNumberString = "..";
+  const emptyNumberIndex = progressionArray.indexOf(hiddenNumberString);
+
+  if (
+    progressionArray[emptyNumberIndex - 1] &&
+    progressionArray[emptyNumberIndex - 2]
+  ) {
+    const increment =
+      Number(progressionArray[emptyNumberIndex - 1]) -
+      Number(progressionArray[emptyNumberIndex - 2]);
+
+    return String(Number(progressionArray[emptyNumberIndex - 1]) + increment);
+  }
+
+  return String(
+    Number(progressionArray[emptyNumberIndex + 1]) -
+      Math.abs(
+        Number(progressionArray[emptyNumberIndex + 1]) -
+          Number(progressionArray[emptyNumberIndex + 2])
+      )
+  );
+};
+
 export const playRounds = ({
   randomQuestionFunc,
   correctAnswerFunc,
