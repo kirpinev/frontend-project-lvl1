@@ -136,6 +136,20 @@ export const getProgressionAnswer = (progression) => {
   );
 };
 
+export const getPrimeNumberAnswer = (primeNumber) => {
+  if (primeNumber <= 1) {
+    return "no";
+  }
+
+  for (let i = 2; i < primeNumber; i += 1) {
+    if (primeNumber % i === 0) {
+      return "no";
+    }
+  }
+
+  return "yes";
+};
+
 export const playRounds = ({
   randomQuestionFunc,
   correctAnswerFunc,
