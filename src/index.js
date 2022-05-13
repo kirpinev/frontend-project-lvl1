@@ -3,6 +3,9 @@ import readlineSync from "readline-sync";
 export const getRandomNumber = (minNumber = 1, maxNumber = 100) =>
   Math.floor(Math.random() * (maxNumber - minNumber + 1) + minNumber);
 
+export const getRandomNumberAnswer = (randomNumber) =>
+  randomNumber % 2 === 0 ? "yes" : "no";
+
 export const getRandomOperator = () => {
   const listOfOperators = ["+", "-", "*"];
   const startOfList = 0;
@@ -38,9 +41,6 @@ export const showResult = (isAllAnswersCorrect, playerName) => {
   }
 };
 
-export const getRandomNumberAnswer = (randomNumber) =>
-  randomNumber % 2 === 0 ? "yes" : "no";
-
 export const getRandomExpression = () => {
   const randomNumberOne = getRandomNumber();
   const randomNumberTwo = getRandomNumber();
@@ -68,6 +68,26 @@ export const getRandomExpressionAnswer = (randomExpression) => {
   }
 
   return String(result);
+};
+
+export const getRandomTwoNumbers = () => {
+  const randomNumberOne = getRandomNumber();
+  const randomNumberTwo = getRandomNumber();
+
+  return `${randomNumberOne} ${randomNumberTwo}`;
+};
+
+export const getRandomTwoNumbersAnswer = (randomTwoNumbers) => {
+  const [firstNumber, secondNumber] = randomTwoNumbers.split(" ");
+  const minNumber = firstNumber < secondNumber ? firstNumber : secondNumber;
+
+  for (let i = minNumber; minNumber >= 1; i -= 1) {
+    if (firstNumber % i === 0 && secondNumber % i === 0) {
+      return String(i);
+    }
+  }
+
+  return null;
 };
 
 export const playRounds = ({

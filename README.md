@@ -10,3 +10,7 @@
 ### Brain calc game example:
 [![Work example](https://asciinema.org/a/kFl2nhx9Tq7bfVjSyj5ElNtNq.png)](https://asciinema.org/a/kFl2nhx9Tq7bfVjSyj5ElNtNq)
 <em>click on the picture to play the video</em>
+
+### Brain gcd game example:
+[![Work example](https://asciinema.org/a/N4p1Ttgf7yqOmqPv5DDihrqPu.png)](https://asciinema.org/a/N4p1Ttgf7yqOmqPv5DDihrqPu)
+<em>click on the picture to play the video</em>
