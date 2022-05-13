@@ -6,15 +6,15 @@
 
 **Brain Games** is a set of five console games built using popular mobile brain training apps. Each game asks questions that need to be answered. After three correct answers, the game is considered to be completed. Incorrect results end the game and return it again. Games:
 
-- Calculator. Arithmetic expressions to be evaluated.
+- `brain-calc`. Arithmetic expressions to be evaluated.
 
-- Progression. Search for missing numbers by number order.
+- `brain-progression`. Search for missing numbers by number order.
 
-- Definition of an even number.
+- `brain-even`. Definition of an even number.
 
-- Finding the Greatest Common Divisor.
+- `brain-gcd`. Finding the Greatest Common Divisor.
 
-- Prime numbers.
+- `brain-prime`. Definition of a prime number.
 
 Brain games is available as an [npm package](https://www.npmjs.com/package/js-console-brain-games).
 
