@@ -5,7 +5,7 @@ import {
   greeting,
   playRounds,
   showRules,
-} from "../index.js";
+} from '../index.js';
 
 const brainPrimeGame = () => {
   greeting();
@@ -14,7 +14,7 @@ const brainPrimeGame = () => {
 
   showRules(
     playerName,
-    'Answer "yes" if given number is prime. Otherwise answer "no".'
+    'Answer "yes" if given number is prime. Otherwise answer "no".',
   );
 
   playRounds({

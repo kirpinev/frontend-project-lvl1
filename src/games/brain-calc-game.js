@@ -5,14 +5,14 @@ import {
   greeting,
   playRounds,
   showRules,
-} from "../index.js";
+} from '../index.js';
 
 export const brainCalcGame = () => {
   greeting();
 
   const playerName = getPlayerName();
 
-  showRules(playerName, "What is the result of the expression?");
+  showRules(playerName, 'What is the result of the expression?');
 
   playRounds({
     randomQuestionFunc: getRandomExpression,

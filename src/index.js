@@ -1,13 +1,13 @@
-import readlineSync from "readline-sync";
+import readlineSync from 'readline-sync';
 
-export const getRandomNumber = (minNumber = 1, maxNumber = 100) =>
-  Math.floor(Math.random() * (maxNumber - minNumber + 1) + minNumber);
+export const getRandomNumber = (minNumber = 1, maxNumber = 100) => Math.floor(
+  Math.random() * (maxNumber - minNumber + 1) + minNumber,
+);
 
-export const getRandomNumberAnswer = (randomNumber) =>
-  randomNumber % 2 === 0 ? "yes" : "no";
+export const getRandomNumberAnswer = (randomNumber) => (randomNumber % 2 === 0 ? 'yes' : 'no');
 
 export const getRandomOperator = () => {
-  const listOfOperators = ["+", "-", "*"];
+  const listOfOperators = ['+', '-', '*'];
   const startOfList = 0;
   const endOfList = listOfOperators.length - 1;
   const randomNumber = getRandomNumber(startOfList, endOfList);
@@ -16,11 +16,10 @@ export const getRandomOperator = () => {
 };
 
 export const greeting = () => {
-  console.log("Welcome to the Brain Games!");
+  console.log('Welcome to the Brain Games!');
 };
 
-export const getPlayerName = () =>
-  readlineSync.question("May I have your name? ");
+export const getPlayerName = () => readlineSync.question('May I have your name? ');
 
 export const showRules = (userName, gameRules) => {
   console.log(`Hello, ${userName}!`);
@@ -31,7 +30,7 @@ export const askQuestion = (question) => {
   console.log(`Question: ${question}`);
 };
 
-export const getPlayerAnswer = () => readlineSync.question("Your answer: ");
+export const getPlayerAnswer = () => readlineSync.question('Your answer: ');
 
 export const showResult = (isAllAnswersCorrect, playerName) => {
   if (isAllAnswersCorrect) {
@@ -50,17 +49,17 @@ export const getRandomExpression = () => {
 };
 
 export const getRandomExpressionAnswer = (randomExpression) => {
-  const [firstNumber, operator, secondNumber] = randomExpression.split(" ");
+  const [firstNumber, operator, secondNumber] = randomExpression.split(' ');
   let result = null;
 
   switch (operator) {
-    case "+":
+    case '+':
       result = Number(firstNumber) + Number(secondNumber);
       break;
-    case "-":
+    case '-':
       result = Number(firstNumber) - Number(secondNumber);
       break;
-    case "*":
+    case '*':
       result = Number(firstNumber) * Number(secondNumber);
       break;
     default:
@@ -78,7 +77,7 @@ export const getRandomTwoNumbers = () => {
 };
 
 export const getRandomTwoNumbersAnswer = (randomTwoNumbers) => {
-  const [firstNumber, secondNumber] = randomTwoNumbers.split(" ");
+  const [firstNumber, secondNumber] = randomTwoNumbers.split(' ');
   const minNumber = firstNumber < secondNumber ? firstNumber : secondNumber;
 
   for (let i = minNumber; minNumber >= 1; i -= 1) {
@@ -94,13 +93,13 @@ export const getProgression = () => {
   const randomStartNumber = getRandomNumber();
   const randomIncrementNumber = getRandomNumber(1, 10);
   const randomEmptyPosition = getRandomNumber(0, 9);
-  const hiddenNumberString = "..";
+  const hiddenNumberString = '..';
   const progressionArray = [randomStartNumber];
   const maxProgressionLength = 10;
 
   for (let i = 1; i < maxProgressionLength; i += 1) {
     progressionArray.push(
-      progressionArray[progressionArray.length - 1] + randomIncrementNumber
+      progressionArray[progressionArray.length - 1] + randomIncrementNumber,
     );
   }
 
@@ -108,46 +107,45 @@ export const getProgression = () => {
     ...progressionArray.slice(0, randomEmptyPosition),
     hiddenNumberString,
     ...progressionArray.slice(randomEmptyPosition + 1),
-  ].join(" ");
+  ].join(' ');
 };
 
 export const getProgressionAnswer = (progression) => {
-  const progressionArray = progression.split(" ");
-  const hiddenNumberString = "..";
+  const progressionArray = progression.split(' ');
+  const hiddenNumberString = '..';
   const emptyNumberIndex = progressionArray.indexOf(hiddenNumberString);
 
   if (
-    progressionArray[emptyNumberIndex - 1] &&
-    progressionArray[emptyNumberIndex - 2]
+    progressionArray[emptyNumberIndex - 1]
+    && progressionArray[emptyNumberIndex - 2]
   ) {
-    const increment =
-      Number(progressionArray[emptyNumberIndex - 1]) -
-      Number(progressionArray[emptyNumberIndex - 2]);
+    const increment = Number(progressionArray[emptyNumberIndex - 1])
+      - Number(progressionArray[emptyNumberIndex - 2]);
 
     return String(Number(progressionArray[emptyNumberIndex - 1]) + increment);
   }
 
   return String(
-    Number(progressionArray[emptyNumberIndex + 1]) -
-      Math.abs(
-        Number(progressionArray[emptyNumberIndex + 1]) -
-          Number(progressionArray[emptyNumberIndex + 2])
-      )
+    Number(progressionArray[emptyNumberIndex + 1])
+      - Math.abs(
+        Number(progressionArray[emptyNumberIndex + 1])
+          - Number(progressionArray[emptyNumberIndex + 2]),
+      ),
   );
 };
 
 export const getPrimeNumberAnswer = (primeNumber) => {
   if (primeNumber <= 1) {
-    return "no";
+    return 'no';
   }
 
   for (let i = 2; i < primeNumber; i += 1) {
     if (primeNumber % i === 0) {
-      return "no";
+      return 'no';
     }
   }
 
-  return "yes";
+  return 'yes';
 };
 
 export const playRounds = ({
@@ -167,10 +165,10 @@ export const playRounds = ({
     const playerAnswer = getPlayerAnswer();
 
     if (playerAnswer === correctAnswer) {
-      console.log("Correct!");
+      console.log('Correct!');
     } else {
       console.log(
-        `'${playerAnswer}' is wrong answer ;(. Correct answer was '${correctAnswer}'.`
+        `'${playerAnswer}' is wrong answer ;(. Correct answer was '${correctAnswer}'.`,
       );
       isAllAnswersCorrect = false;
       break;

@@ -5,7 +5,7 @@ import {
   showRules,
   playRounds,
   getRandomNumberAnswer,
-} from "../index.js";
+} from '../index.js';
 
 const brainEvenGame = () => {
   greeting();
@@ -14,7 +14,7 @@ const brainEvenGame = () => {
 
   showRules(
     playerName,
-    'Answer "yes" if the number is even, otherwise answer "no".'
+    'Answer "yes" if the number is even, otherwise answer "no".',
   );
 
   playRounds({

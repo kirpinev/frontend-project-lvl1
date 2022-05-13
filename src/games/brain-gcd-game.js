@@ -5,14 +5,14 @@ import {
   greeting,
   playRounds,
   showRules,
-} from "../index.js";
+} from '../index.js';
 
 const brainGcdGame = () => {
   greeting();
 
   const playerName = getPlayerName();
 
-  showRules(playerName, "Find the greatest common divisor of given numbers.");
+  showRules(playerName, 'Find the greatest common divisor of given numbers.');
 
   playRounds({
     randomQuestionFunc: getRandomTwoNumbers,
